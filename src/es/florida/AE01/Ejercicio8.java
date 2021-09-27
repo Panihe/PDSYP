@@ -4,9 +4,6 @@ import java.util.Scanner;
 
 public class Ejercicio8 {
 	
-	static long tiempoInicio;
-    static long tiempoFinal;
-	
 	public static void main(String[] args) {
 		int numberStart, numberEnd;
 		
@@ -16,7 +13,9 @@ public class Ejercicio8 {
 		numberStart = Integer.parseInt(sc.nextLine());
 		
 		System.out.print("Introduce otro número: ");
-		numberEnd = Integer.parseInt(sc.nextLine());	
+		numberEnd = Integer.parseInt(sc.nextLine());
+		
+		long tiempoInicio = System.nanoTime();
 		for(int i = numberStart; i <= numberEnd; i++) {
 			if(isPrime(i)) {
 				System.out.println(String.valueOf(i) + " - Primo");
@@ -26,10 +25,11 @@ public class Ejercicio8 {
 		}
 		
 		//Tiempo final
-        tiempoFinal = System.nanoTime();
+        long tiempoFinal = System.nanoTime();
         //Resta del tiempo final menos el tiempo de inicio
-        double tiempo = (double) ((tiempoFinal-tiempoInicio)/1000);
-        System.out.println("Tiempo: " + tiempo + " nanosegundos");
+        double tiempoMilisegundos = (tiempoFinal-tiempoInicio)/1e6;
+        double tiempoSegundos = tiempoMilisegundos/1000;
+        System.out.println("Duración: " + String.format ("%.3f",tiempoSegundos) + " segundos");
         
 		sc.close();
 	}
