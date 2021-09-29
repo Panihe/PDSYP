@@ -29,8 +29,13 @@ public class Ejercicio8 {
         //Resta del tiempo final menos el tiempo de inicio
         double tiempoMilisegundos = (tiempoFinal-tiempoInicio)/1e6;
         double tiempoSegundos = tiempoMilisegundos/1000;
-        System.out.println("Duración: " + String.format ("%.3f",tiempoSegundos) + " segundos");
-        
+        if(tiempoSegundos <= 0.001) {
+        	 System.out.println("Duración: " + String.format ("%.3f",tiempoSegundos) + " segundo");
+             
+        }else if (tiempoSegundos > 0.001){
+        	 System.out.println("Duración: " + String.format ("%.3f",tiempoSegundos) + " segundos");
+        }
+       
 		sc.close();
 	}
 	
