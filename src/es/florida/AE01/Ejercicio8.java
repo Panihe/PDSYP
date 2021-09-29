@@ -41,10 +41,11 @@ public class Ejercicio8 {
 		}
 		
 		for (int x = 2; x < number / 2; x++) {
-			// Si es divisible por cualquiera de estos números, no
-			// es primo
-			if (number % x == 0)
+			// Si es divisible por cualquiera de estos números, no es primo
+			if (number % x == 0) {
 				return false;
+			}
+				
 		}
 		
 		// Si no se pudo dividir por ninguno de los de arriba, sí es primo
